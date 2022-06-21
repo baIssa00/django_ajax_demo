@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Django Ajax</title>     
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+    </head>
+    <body>
+        <!-- <h1>Django Ajax Example</h1> -->
+
+        <!-- Le formulaire -->
+        <form method="POST">
+            {% csrf_token %}
+            <label>Opération</label>
+            <input type="text" id="a"> + <input type="text" id="b">
+            <input id="ajax-call" type="submit" value="Calculer">
+        </form>
+        
+        <!-- Nous afficherons le résultat de l'opération ici -->
+        <p id="ajax"></p>
+
+        <script src="{% static 'js/jquery-3.6.0.js' %}"></script>
+        <script src="{% static 'js/index.js' %}"></script>
+
+    </body>
+</html>

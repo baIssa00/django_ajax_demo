@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Django Ajax</title>     
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+    </head>
+    <body>
+        <div class="form-container">
+            <form method="POST" action="{% url 'create' %}" class="form" id="formSubmit">
+                {% csrf_token %}
+                
+                <!-- Affichage du message -->
+                <p id="message" class="alert-msg"></p>
+
+                <div class="logo"><img src="{% static 'img/logo.png' %}" alt="logo"></div>
+                <input type="email" name="email" id="email" required placeholder="Email">
+                <input type="password" name="password" id="password" required placeholder="Mot de passe">
+                <div class="p-md"><p>Mot de passe oublié?</p></div>
+                <input type="submit" name="submit" value="Se coonecter" class="form-btn"  id="btn-connect">
+                <div class="p-compte"><p> Vous n'avez pas de compte? <a href="#">S'inscrire</a></p></div>
+            </form>
+        </div>
+
+        <script src="{% static 'js/jquery-3.6.0.js' %}"></script>
+        <script src="{% static 'js/signup.js' %}"></script>
+
+    </body>
+</html>
